@@ -1,5 +1,4 @@
-
-import daisyui from "daisyui";
+import daisyui from 'daisyui';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -10,10 +9,7 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [
-    daisyui,
-  ],
-  // 👇 Move this inside plugin config if you're using Tailwind v3.3+
+  plugins: [daisyui],
   daisyui: {
     themes: [
       "pastel",
@@ -32,18 +28,3 @@ export default {
     ],
   },
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
