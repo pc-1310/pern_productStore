@@ -6,7 +6,8 @@ import dotenv from "dotenv";
 import postgres from "postgres";
 import productsRoutes from "./routes/productsRoutes.js";
 import {sql} from "./config/db.js";
-
+import {aj} from "./lib/arcjet.js";
+dotenv.config();
 const app=express();
 
 const PORT = process.env.PORT||3000;
@@ -20,7 +21,7 @@ app.use(morgan("dev")); //log the requests
 
 app.use(async(req,res,next)=>{
   try{
-    const decision=await aj.project(req, {
+    const decision=await aj.protect(req, {
       requested: 1, // specifies that each request consumes one token
     });
     if(decision.isDenied()){
